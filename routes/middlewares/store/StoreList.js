@@ -1,4 +1,4 @@
-//학년 별로 부스 나누기
+//학년 별로 부스 나누기 -> 미완성
 const { model } = require('../../../database');
 const CustomError = require('../../../CustomError');
 
