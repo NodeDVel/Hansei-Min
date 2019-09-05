@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const spend = sequelize.define({
+    const spendHistory = sequelize.define({
         
     });
     

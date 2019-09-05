@@ -2,11 +2,10 @@ module.exports = (sequelize, DataTypes) => {
     const item = sequelize.define('item', {
         pk: {
             primaryKey: true,
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
         },
         store_pk: {
-            primaryKey: true,
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
         },
         name: DataTypes.STIRNG,
         price: DataTypes.INTEGER,
