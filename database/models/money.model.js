@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const userCharge = sequelize.define('userCharge', {
+    const money = sequelize.define('money', {
         pk: {
             primaryKey: true,
             type: DataTypes.INTEGER,
@@ -10,5 +10,5 @@ module.exports = (sequelize, DataTypes) => {
         money: DataTypes.INTEGER,
     }); //user money 충전
 
-    return userCharge;
+    return money;
 }

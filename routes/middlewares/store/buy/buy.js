@@ -1,6 +1,7 @@
 //구매
 const { model } = require('../../../../database');
 const CustomError = require('../../../../CustomError');
+
 //지불해야될 돈, 자신이 가지고 있는 돈
 const buy = async (req, res, next) => {
     const user_pk = req.body.user_pk;
