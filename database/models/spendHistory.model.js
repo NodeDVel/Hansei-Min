@@ -11,8 +11,8 @@ module.exports = (sequelize, DataTypes) => {
         item_name: DataTypes.STRING,
         count: DataTypes.INTEGER,
         price: DataTypes.INTEGER,
-        
+
     });
     //결제 내역
-    return spend;
+    return spendHistory;
 }

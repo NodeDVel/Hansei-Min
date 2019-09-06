@@ -1,6 +1,6 @@
 //학년 별로 부스 나누기 -> 미완성
-const { model } = require('../../../database');
-const CustomError = require('../../../CustomError');
+const { model } = require('../../../../database');
+const CustomError = require('../../../../CustomError');
 
 const StoreList = async (req, res, next) => {
     const pk = req.headers.pk;

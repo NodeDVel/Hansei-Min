@@ -10,5 +10,5 @@ module.exports = (sequelize, DataTypes) => {
         money: DataTypes.INTEGER,
     }); //user money 충전
 
-    return charge;
+    return userCharge;
 }

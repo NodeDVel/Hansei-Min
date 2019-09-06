@@ -1,6 +1,6 @@
 //각 부스 당 물품
-const { model } = require('../../../database');
-const CustomError = require('../../../CustomError');
+const { model } = require('../../../../database');
+const CustomError = require('../../../../CustomError');
 
 const itemList = async (req, res, next) => {
     const store_id = req.params.store_id;
