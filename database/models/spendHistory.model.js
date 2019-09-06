@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const spendHistory = sequelize.define({
+    const spendHistory = sequelize.define('spendHistory',{
         pk: {
             primaryKey: true,
             type:  DataTypes.INTEGER,
