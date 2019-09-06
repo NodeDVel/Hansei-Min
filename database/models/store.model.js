@@ -4,10 +4,15 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true,
             type: DataTypes.INTEGER,
         },
+        major: DataTypes.STRING,
         class: DataTypes.STRING,
+        grade: DataTypes.STRING,
+        
         name: DataTypes.STRING,
         content: DataTypes.STRING,
-        grade: DataTypes.STRING,
+        description : {
+            type: DataTypes.STRING,
+        }
     }, {
         charset: 'utf8',
         collate: 'utf8_general_ci',

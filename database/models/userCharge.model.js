@@ -1,8 +1,11 @@
 module.exports = (sequelize, DataTypes) => {
     const userCharge = sequelize.define({
-        user_pk: {
+        pk: {
             primaryKey: true,
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
+        },
+        user_pk: {
+            type: DataTypes.UUID,
         },
         money: DataTypes.INTEGER,
     }); //user money 충전

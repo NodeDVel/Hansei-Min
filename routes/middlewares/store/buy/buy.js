@@ -24,10 +24,14 @@ const buy = async (req, res, next) => {
             CustomError(500, '알 수 없는 데이터베이스 오류입니다. 관리자에게 문의해주세요');
         });
 
+        await model.spendHistory.create({
+            
+        }).catch(err => {
+            console.error(err);
+            next(CustomError(500, '알 수 없는 데이터베이스 오류입니다. 관리자에게 문의해주세요'));
+        });
         //spendHistory로 여기서 결제내역 표시
     }
-
-
 }
 
 module.exports = buy;

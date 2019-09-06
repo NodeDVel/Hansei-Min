@@ -13,6 +13,9 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.BOOLEAN,
             defaultValue: true,
         },
+        descripiton: {
+            type: DataTypes.STRING,
+        }
     },{
         charset: 'utf8',
         collate: 'utf8_general_ci',

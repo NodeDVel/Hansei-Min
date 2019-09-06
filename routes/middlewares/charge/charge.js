@@ -17,6 +17,8 @@ const request = async (req, res, next) => {
             res.locals.charge = {
                 money: userMoney,
             }
+
+            //chargeHstory model로 환전 내역 반환
         }
     })
     .catch(err => {
