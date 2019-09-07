@@ -20,5 +20,13 @@ module.exports = (sequelize, DataTypes) => {
         charset: 'utf8',
         collate: 'utf8_general_ci',
     });
+
+    item.associate = (models) => {
+        item.belongsTo(models.store, {
+            foreignKey: 'store_pk',
+        });
+    }
+    //부스 item db
+    
     return item;
 }

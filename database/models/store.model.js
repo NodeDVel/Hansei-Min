@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
         major: DataTypes.STRING,
         class: DataTypes.STRING,
         grade: DataTypes.STRING,
-        
+
         name: DataTypes.STRING,
         content: DataTypes.STRING,
         description : {
@@ -17,6 +17,10 @@ module.exports = (sequelize, DataTypes) => {
         charset: 'utf8',
         collate: 'utf8_general_ci',
     });
-
+    store.associate = (models) => {
+        store.hasMany(models.item);
+        store.hasMany(models.spendHistory);
+    }
+    //부스 store db
     return store;
 }   

@@ -11,7 +11,13 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
         },
     });
+    
+    chargeHistory.associate = (models) => {
+        chargeHistory.belongsTo(models.money, {
+            foreignKey: 'user_pk',
+        });
+    }
 
     return chargeHistory;
-    //환전 내역
+    //환전 내역 db
 }

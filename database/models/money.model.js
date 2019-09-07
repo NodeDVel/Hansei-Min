@@ -8,7 +8,12 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.UUID,
         },
         money: DataTypes.INTEGER,
-    }); //user money 충전
+    }); 
+    //usermoney db(user db)
+
+    moeny.associate = (models) => {
+        money.hasMany(models.spendHistory);
+      };
 
     return money;
 }
