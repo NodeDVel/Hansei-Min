@@ -19,8 +19,13 @@ const spendHistory = async (req, res, next) => {
         next(CustomError(500, '알 수 없는 데이터베이스 오류입니다. 관리자에게 문의해주세요'));
     } else {
         res.json({
-            history,
+            success: true,
+            data: {
+                history,
+            }
         });
+
+        console.log(history);
     }
 }
 
