@@ -34,3 +34,4 @@ const StoreList = async (req, res, next) => {
 }
 
 module.exports = StoreList;
+//get

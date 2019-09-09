@@ -22,8 +22,16 @@ const getCharge = async (req, res, next) => {
         res.locals.charge = {
             money: userMoney,
         }
+
+        res.json({
+            success: true,
+            data: {
+                userMoney,
+            }
+        })
         
     }
 }
 
 module.exports = getCharge;
+//get

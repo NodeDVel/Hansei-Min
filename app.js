@@ -9,27 +9,18 @@ dotenv.config();
 const app = express();
 sequelize.sync();
 
+app.get('/', (req, res, next) => {
+  res.send('<script>alert("실행 성공")</script>');
+});
+
 app.use(morgan('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true, }));
 
-app.use(function(req, res, next) {
-  next(CustomErorr(404, 'Error'));
-});
+app.use('/Han-Min', require('./routes/apiControllers'));
 
-app.get('/', (req, res, next) => {
-    alert('반갑습니다');
-});
 
-app.use(function(err, req, res, next) {
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-});
-
-const port = 3000;
+const port = 8000;
 app.listen(port, function () { console.log('Updated : Server listening at port %d', port); }); 
 
 module.exports = app;

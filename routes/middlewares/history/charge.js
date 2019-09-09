@@ -1,18 +1,17 @@
-//결제 내역
-const { model } = require('../../../../database');
-const CustomError = require('../../../../CustomError');
+const { model } = require('../../../database');
+const CustomError = require('../../../CustomError');
 
-const spendHistory = async (req, res, next) => {
+const chargeHistory = async (req, res, next) => {
     const pk = req.headers.pk;
 
-    const history = await model.spendHistory.findAll({ //buy.js에서 생성한 spendHistory 가져오기 
+    const history = await model.chargeHistory.findAll({
         where: {
             pk: pk,
             order: [['createAt', 'DESC']],
         },
     }).catch(err => {
         console.error(err);
-        next(CustomError(500, '알 수 없는 데이터베이스 오류입니다. 관리자에게 문의해주세요'));
+        next(CustomError(500, '알 수 없는 데이터베이스 오류입니다. 관리자에게 문의해주세요.'));
     });
 
     if(!history) {
@@ -22,11 +21,12 @@ const spendHistory = async (req, res, next) => {
             success: true,
             data: {
                 history,
-            }
+            },
         });
 
         console.log(history);
     }
 }
 
-module.exports = spendHistory; //구매내역
+module.exports = chargeHistory;
+//get

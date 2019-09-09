@@ -69,3 +69,4 @@ const buyCheck = async (req, res, next) => {
 }
 
 module.exports = buyCheck;
+//post
