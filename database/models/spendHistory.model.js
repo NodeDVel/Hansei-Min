@@ -17,6 +17,12 @@ module.exports = (sequelize, DataTypes) => {
 
     spendHistory.associate = (models) => {
         //money db와 store db 연결
+        spendHistory.belongsTo(models.user, {
+            foreignKey: 'user_pk',
+        });
+        spendHistory.belongsTo(models.store, {
+            foreignKey: 'user_pk',
+        });
     }
     return spendHistory;
 }

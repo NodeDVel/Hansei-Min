@@ -23,4 +23,4 @@ module.exports = (sequelize, DataTypes) => {
     }
     //부스 store db
     return store;
-}   
+}
