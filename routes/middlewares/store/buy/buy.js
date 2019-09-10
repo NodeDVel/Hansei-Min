@@ -7,10 +7,12 @@ const buy = async (req, res, next) => {
     const user_pk = req.body.user_pk;
     const moneyShouldPay = res.locals.item.moneyShouldPay;
     const now_Money = res.locals.charge.money;
-    const store_name = req.body.name;
+    const store_name = req.body.name; //store name을 가져옴
     const pk = req.headers.pk;
+
+    const Date = new Date();
     
-    const user = await model.userCharge.findOne({
+    const user = await model.user.findOne({
         where: {
             user_pk: user_pk, 
         },
@@ -27,6 +29,7 @@ const buy = async (req, res, next) => {
             CustomError(500, '알 수 없는 데이터베이스 오류입니다. 관리자에게 문의해주세요');
         });
 
+        //Date 객체 시 분 초 까지만 만들어서 create할때 추가
         const history = await model.spendHistory.create({ //결제내역 생성
             pk: pk,
             user_pk: user_pk,

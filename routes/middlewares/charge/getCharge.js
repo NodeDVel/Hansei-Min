@@ -5,7 +5,7 @@ const CustomError = require('../../../CustomError');
 const getCharge = async (req, res, next) => {
     const { money } = req.body;
 
-    const result = await model.userCharge.findOne({
+    const result = await model.user.findOne({
         where: {
             money: money,
         },
