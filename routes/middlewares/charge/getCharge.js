@@ -3,11 +3,11 @@ const { model } = require('../../../database');
 const CustomError = require('../../../CustomError');
 
 const getCharge = async (req, res, next) => {
-    const { money } = req.body;
+    const { user_pk } = req.headers.access_token;
 
     const result = await model.user.findOne({
         where: {
-            money: money,
+            user_pk: user_pk
         },
     }).catch(err => {
         console.error(err);
@@ -22,13 +22,12 @@ const getCharge = async (req, res, next) => {
         res.locals.charge = {
             money: userMoney,
         }
-
         res.json({
             success: true,
             data: {
                 userMoney,
-            }
-        })
+            },
+        });
         
     }
 }
